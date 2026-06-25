@@ -29,4 +29,4 @@ a priori la tabella degli utenti per far provare la registrazione, ma non è obb
 
 LINK GITHUB: 
 https://github.com/isthathim993/homework-2-linguaggi-web
-*linklucia*
+https://github.com/luci0415/Homework2-linguaggiWeb
