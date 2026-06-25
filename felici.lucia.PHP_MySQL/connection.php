@@ -10,7 +10,7 @@ class connection {
             $host = "localhost";
             $user = "user";
             $pass = "password";
-            $db = "emilio.russo.PHP-MySQL";
+            $db = "lucia.felici.PHP-MySQL";
             $chrs = "utf8mb4";
 
             $attr = "mysql:host=$host;dbname=$db;charset=$chrs";
