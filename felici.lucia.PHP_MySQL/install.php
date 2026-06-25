@@ -9,7 +9,7 @@ $chrs = "utf8mb4";
 
 try {
     //Utente, password e connection da creare
-    $new_db = "emilio.russo.PHP-MySQL";
+    $new_db = "lucia.felici.PHP-MySQL";
     $new_user = "user";
     $new_pass = "password";
 
