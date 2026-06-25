@@ -1,0 +1,260 @@
+body {
+    background-image: url("imgs/maps-pics/cork-board-background.jpg");
+    background-repeat: no-repeat; /* Non si ripete più */
+    background-size: cover;       /* Si allarga per coprire tutto lo schermo */
+    background-position: center;  /* La centra */
+}
+
+
+
+/* =========================
+   TOP BAR
+========================= */
+
+#top-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background: #111;
+}
+
+/* contenitore flessibile piena larghezza */
+#top-bar ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly; /* 🔥 distribuzione uniforme */
+    list-style: none;
+    margin: 0;
+    padding: 0.8rem 1rem;
+    width: 100%;
+}
+
+/* ogni voce stessa “importanza” */
+#top-bar li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1; /* 🔥 tutte le voci hanno stessa larghezza */
+}
+
+/* link centrati e uniformi */
+#top-bar a {
+    display: block;
+    font-weight: bold;
+    font-size: 1.05rem;
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.9);
+    padding: 0.3rem 0.5rem;
+    text-align: center;
+}
+
+/* hover */
+#top-bar a:hover {
+    color: #ffffff;
+}
+
+/* icona utente */
+.user-icon {
+    flex: 0;              /* non si espande */
+    margin-left: auto;    /* va a destra */
+}
+
+.user-icon a {
+    font-size: 1.4rem;
+    color: white;
+    transition: 0.3s;
+}
+
+.user-icon a:hover {
+    color: #00ffff;
+    text-shadow: 0 0 10px #00ffff;
+}
+
+
+/* =========================
+    CORPO DEL SITO
+   ========================= */
+
+h1 {
+    font-family: 'Courier Prime', monospace;
+    font-size: 4rem;
+    text-align: center;
+    color: #00000099;
+
+    text-shadow:
+        2px 2px 0 #000,
+        0 0 10px rgba(255,255,255,0.15);
+
+    transform: rotate(-1deg); /* effetto “appeso a mano” */
+    letter-spacing: 2px;
+}
+
+.main ul {
+    list-style-type: none;  /* Rimuove i pallini della lista */
+    display: flex;
+    flex-wrap: wrap;
+    font-family: 'Handlee', cursive; /* Un font stile scrittura a mano */
+    font-size: 1.2rem;
+    justify-content: center;
+    text-align: center;
+
+    margin: 1rem;
+}
+
+.main a, .main a:visited, .main a:hover, .main a:active {
+    font-weight: bold;
+    color: black;
+    text-decoration: none;
+}
+
+img{
+    width: 30rem;
+    height: auto;
+    display: block;
+
+
+    box-shadow: 0.2rem 0.3rem 0.6rem rgba(0,0,0,0.5); /* Ombra per dare profondità */
+    background: white;
+
+    margin: 1rem 1rem -2rem 1rem;
+    padding: 0.6rem 0.6rem 3rem 0.6rem; /* Bordo bianco tipico delle foto */
+}
+
+.footer {
+    position: relative;
+    z-index: 999;
+    width: 100%;
+    text-align: center;
+
+    color: #d6ffd6; /* verde pallido leggibile */
+    background: rgba(0, 0, 0, 0.5); /* stacca dallo sfondo */
+    text-shadow: 0 0 0.375rem rgba(0, 255, 100, 0.4); /* glow horror */
+
+    padding: 1rem;
+    border-top: 0.125rem solid rgba(0, 255, 102, 0.233);
+}
+
+
+/* =========================
+   MINI MAPPE
+   ========================= */
+
+.main_mappe {
+    margin-top: 5rem; /* spazio per la navbar fissa */
+    text-align: center;
+}
+
+/* Scheda info e planimetria affiancate */
+.specs,
+.planimetry {
+    display: inline-block;
+    vertical-align: middle;
+
+    background: white;
+    box-shadow: 0.2rem 0.3rem 0.6rem rgba(0,0,0,0.5);
+
+    padding: 1rem;
+    margin: 1.5rem;
+}
+
+/* Scheda informazioni */
+.specs {
+    width: 20rem;
+
+    font-family: 'Handlee', cursive;
+    font-size: 1rem;
+    text-align: center;
+}
+
+.specs h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.specs table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.specs th,
+.specs td {
+    padding: 0.4rem;
+}
+
+.specs th {
+    text-align: left;
+}
+
+.specs td {
+    text-align: right;
+}
+
+/* Planimetria */
+.planimetry img {
+    width: 35rem;
+    max-width: 100%;
+    display: block;
+
+    background: white;
+    padding: 0;
+    margin: 0;
+}
+
+/* =========================
+   GALLERIA IMMAGINI
+   ========================= */
+
+.rooms {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    margin: 2rem auto;
+    max-width: 90%;
+}
+
+.rooms img {
+    width: 25rem;
+    max-width: 100%;
+
+    background: white;
+    padding: 0.6rem 0.6rem 1.5rem 0.6rem;
+
+    margin: 1rem;
+
+    box-shadow: 0.2rem 0.3rem 0.6rem rgba(0,0,0,0.5);
+
+    transition: transform 0.25s ease;
+}
+
+.rooms img:hover {
+    transform: scale(1.03) rotate(-1deg);
+}
+
+/* =========================
+   RESPONSIVE
+   ========================= */
+
+@media (max-width: 900px) {
+
+    .specs,
+    .planimetry {
+        display: block;
+        margin: 1rem auto;
+    }
+
+    .specs {
+        width: 90%;
+        max-width: 25rem;
+    }
+
+    .planimetry img {
+        width: 90vw;
+    }
+
+    .rooms img {
+        width: 90%;
+    }
+}

@@ -1,0 +1,442 @@
+body 
+{
+    margin: 0; /* Rimuove il margine predefinito del browser */
+
+    /* Crea uno sfondo composto da più gradienti radiali sovrapposti */
+    background:
+
+        /* Prima luce verde in alto a sinistra */
+        radial-gradient(circle at 30% 20%,
+        rgba(0, 80, 0, 0.3) 0%, /* Colore verde semi-trasparente al centro */
+        transparent 35%),       /* Diventa trasparente verso l'esterno */
+
+        /* Seconda luce rossastra in basso a destra */
+        radial-gradient(circle at 70% 80%,
+        rgba(82, 31, 31, 0.6) 0%, /* Rosso scuro semi-trasparente */
+        transparent 35%),         /* Dissolvenza */
+
+        /* Sfondo principale nero */
+        radial-gradient(circle at center,
+        #080808 0%, /* Nero leggermente grigio al centro */
+        #000000 85%); /* Nero puro ai bordi */
+
+    overflow-x: hidden; /* Nasconde eventuali scroll orizzontali */
+}
+
+
+
+/* =========================
+   TOP BAR
+========================= */
+
+#top-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background: #111;
+}
+
+/* contenitore flessibile piena larghezza */
+#top-bar ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly; /* 🔥 distribuzione uniforme */
+    list-style: none;
+    margin: 0;
+    padding: 0.8rem 1rem;
+    width: 100%;
+}
+
+/* ogni voce stessa “importanza” */
+#top-bar li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1; /* 🔥 tutte le voci hanno stessa larghezza */
+}
+
+/* link centrati e uniformi */
+#top-bar a {
+    display: block;
+    font-weight: bold;
+    font-size: 1.05rem;
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.9);
+    padding: 0.3rem 0.5rem;
+    text-align: center;
+}
+
+/* hover */
+#top-bar a:hover {
+    color: #ffffff;
+}
+
+/* icona utente */
+.user-icon {
+    flex: 0;              /* non si espande */
+    margin-left: auto;    /* va a destra */
+}
+
+.user-icon a {
+    font-size: 1.4rem;
+    color: white;
+    transition: 0.3s;
+}
+
+.user-icon a:hover {
+    color: #00ffff;
+    text-shadow: 0 0 10px #00ffff;
+}
+
+
+
+/* =========================
+   MAIN DELLA PAGINA
+========================= */
+
+/* Contenitore informazioni principali */
+#page-title {
+
+  vertical-align: top; 
+  /* Allinea verticalmente in alto */
+
+  text-align: center; 
+  /* Centra il testo */
+
+  position: relative; 
+  /* Permette il posizionamento relativo */
+
+  color: white; 
+  width: 100%; 
+  height: 100%; 
+}
+
+/* Titolo principale */
+.h1{
+
+    position: relative;
+
+    transform: translateY(50%);
+    /* Sposta il titolo verso il basso */
+
+    font-size: 80px; 
+    font-family: 'Creepster', cursive;
+    color: #e8ffe8da;
+    text-shadow:
+        -2px 0 rgb(0, 0, 0), /* Ombra nera a sinistra */
+        2px 0 rgb(255, 0, 0), /* Ombra rossa a destra */
+        0 0 10px rgba(0,255,120,0.8), /* Alone verde */
+        0 0 30px rgba(0,255,120,0.3),
+        0 0 60px rgba(0,255,120,0.15);
+
+    animation: pulseGlow 4s infinite alternate;
+    /* Animazione glow */
+}
+
+/* Definizione animazione glow */
+@keyframes pulseGlow{
+
+    from{
+        text-shadow:
+            -2px 0 rgb(0, 0, 0),
+            2px 0 rgb(255, 0, 0),
+            0 0 10px rgba(7, 39, 22, 0.8),
+            0 0 30px rgba(0,255,120,0.3);
+    }
+
+    to{
+        text-shadow:
+            -3px 0 rgb(0, 0, 0),
+            3px 0 rgb(255, 0, 0),
+            0 0 20px rgb(5, 27, 16),
+            0 0 50px rgba(0,255,120,0.5);
+    }
+}
+
+/* Sottotitolo principale */
+.h2{
+
+    margin-top: 0px; 
+    /* Nessun margine sopra */
+
+    font-family: 'Creepster', cursive;
+    font-size: 30px;
+    color: #e8ffe8;
+    text-shadow:
+        -2px 0 rgb(0, 0, 0),
+        2px 0 rgb(255, 0, 0),
+        0 0 10px rgba(0,255,120,0.8),
+        0 0 30px rgba(0,255,120,0.3),
+        0 0 60px rgba(0,255,120,0.15);
+
+    animation: pulseGlow 4s infinite alternate;
+}
+
+/* Seconda definizione dell'animazione */
+@keyframes pulseGlow{
+
+    from{
+        text-shadow:
+            -2px 0 rgb(0, 0, 0),
+            2px 0 rgb(255, 0, 0),
+            0 0 10px rgba(0,255,120,0.8),
+            0 0 30px rgba(0,255,120,0.3);
+    }
+
+    to{
+        text-shadow:
+            -3px 0 rgb(0, 0, 0),
+            3px 0 rgb(255, 0, 0),
+            0 0 20px rgba(0,255,120,1),
+            0 0 50px rgba(0,255,120,0.5);
+    }
+}
+
+/* Linea decorativa sotto .h2 */
+.h2::after {
+
+    content: "";
+    /* Crea un elemento pseudo */
+
+    display: block;
+    /* Occupa una riga */
+
+    width: 120px;
+    /* Lunghezza linea */
+
+    height: 2px;
+    /* Spessore */
+
+    margin: 10px auto;
+    /* Centrata */
+
+    background: linear-gradient(
+        to right,
+        transparent,
+        rgb(29, 107, 76),
+        transparent
+    );
+    /* colore verde */
+}
+
+/* Sottotitolo della descrizione*/
+.subtitle{
+
+    font-size: 30px;
+
+    font-family: 'Share Tech Mono', monospace;
+
+    color: #d6cece;
+
+    filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.462));
+    /* Piccola ombra */
+
+    text-shadow: 2px 2px 6px rgb(204, 28, 28),
+                 2px 2px 8px rgb(29, 107, 76);
+    /* Ombra rossa */
+
+    text-align: center;
+}
+
+/* Testo introduttivo */
+.intro{
+
+    font-family: 'Share Tech Mono', monospace;
+
+    color: #d6cece; 
+
+    text-shadow:
+        4px 4px 6px darkred,
+        0 0 18px rgba(0, 0, 0, 0.8);
+
+    font-size: 18px;
+
+    line-height: 1.8;
+    /* Altezza righe */
+
+    margin-left: 10%;
+    margin-right: 10%;
+    /* Margini laterali */
+
+    padding: 1.5em;
+    /* Spazio interno */
+
+    background: rgba(0, 0, 0, 0.6);
+    /* Sfondo semi-trasparente */
+
+    border-left: 3px solid rgba(255, 0, 0, 0);
+    /* Bordo laterale */
+
+    box-shadow: 0 0 15px rgba(0, 255, 100, 0.1);
+    /* Alone verde */
+}
+
+/* Contenitore principale */
+.main {
+
+    border: none;
+    /* Nessun bordo */
+
+    font-size: 1.5em;
+
+    text-shadow: 0.3px 0 0.1px ;
+
+    padding-left: 15em;
+    padding-right: 15em;
+    padding-top: 2em;
+    padding-bottom: 2em;
+}
+
+
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer {
+
+    position: relative;
+
+    z-index: 999;
+    /* Molto in alto rispetto agli altri elementi */
+
+    width: 100%;
+
+    text-align: center;
+
+    color: #d6ffd6;
+    /* Verde pallido */
+
+    padding: 1em;
+
+    background: rgba(0, 0, 0, 0.096);
+
+    border-top: 2px solid rgba(0, 255, 102, 0.233);
+
+    text-shadow: 0 0 6px rgba(0, 255, 100, 0.4);
+}
+
+
+
+/* =========================
+   GHOST ORB
+========================= */
+
+/* Contenitore delle orb */
+.orb-container {
+
+    position: fixed;
+    /* Fisso sullo schermo */
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    pointer-events: none;
+    /* Non blocca i click */
+
+    z-index: -1;
+    /* Dietro al contenuto */
+}
+
+/* Aspetto base delle orb */
+.orb {
+
+    position: absolute;
+
+    width: 0.5em;
+    height: 0.5em;
+
+    background: rgba(230, 255, 230, 0.9);
+    /* Colore verde chiaro */
+
+    border-radius: 50%;
+    /* Forma circolare */
+
+    box-shadow:
+        0 0 0.8em 0.3em rgba(200, 255, 200, 0.3);
+    /* Alone luminoso */
+
+    filter: blur(0.05em);
+    /* Sfocatura */
+}
+
+/* Animazione movimento orb */
+@keyframes floatOrb {
+
+    0%   {
+        transform: translate(0, 0);
+        opacity: 0;
+    }
+
+    10%  {
+        opacity: 0.6;
+    }
+
+    50%  {
+        transform: translate(10em, -5em);
+        opacity: 0.8;
+    }
+
+    90%  {
+        opacity: 0.6;
+    }
+
+    100% {
+        transform: translate(20em, -2em);
+        opacity: 0;
+    }
+}
+
+/* Orb individuali con posizioni e tempi diversi */
+.orb1 {
+    top: 20%;
+    left: 10%;
+    animation: floatOrb 8s infinite linear;
+}
+
+.orb2 {
+    top: 60%;
+    left: 80%;
+    animation: floatOrb 12s infinite linear -2s;
+}
+
+.orb3 {
+    top: 40%;
+    left: 40%;
+    animation: floatOrb 10s infinite linear -5s;
+}
+
+.orb4 {
+    top: 50%;
+    left: 70%;
+    animation: floatOrb 14s infinite linear -3s;
+}
+
+.orb5 {
+    top: 15%;
+    left: 75%;
+    animation: floatOrb 13s infinite linear -4s;
+}
+
+.orb6 {
+    top: 85%;
+    left: 20%;
+    animation: floatOrb 15s infinite linear -6s;
+}
+
+.orb7 {
+    top: 55%;
+    left: 35%;
+    animation: floatOrb 9s infinite linear -8s;
+}
+
+.orb8 {
+    top: 70%;
+    left: 15%;
+    animation: floatOrb 10s infinite linear -5s;
+}

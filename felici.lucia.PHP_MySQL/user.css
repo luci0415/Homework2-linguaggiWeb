@@ -1,0 +1,117 @@
+body{
+    margin:0;
+    min-height:100vh;
+
+    background:
+        radial-gradient(circle at center,
+        #1a1a1a 0%,
+        #0d0d0d 50%,
+        #000 100%);
+
+    font-family:'Share Tech Mono', monospace;
+    color:#e0e0e0;
+
+    display: block; /* 👈 QUESTO è il fix */
+    padding-top: 80px; /* spazio per top bar fixed */
+}
+
+.profile-card{
+    width:500px;
+    padding:40px;
+
+    background:rgba(10,10,10,0.85);
+
+    border:2px solid #007a1f;
+    border-radius:15px;
+
+    box-shadow:
+        0 0 15px #00b35f,
+        0 0 40px rgba(0, 255, 149, 0.2);
+
+    backdrop-filter:blur(8px);
+}
+
+.profile-card h1{
+    text-align:center;
+    color:#7fffd4;
+
+    letter-spacing:3px;
+
+    text-shadow:
+        0 0 10px #0bb17a,
+        0 0 20px #08a571;
+}
+
+#page-title{
+    text-align:center;
+    margin-bottom: 60px;
+}
+
+.profile-container{
+    display:flex;
+    justify-content:center;
+}
+
+.info p{
+    margin:20px 0;
+    font-size:18px;
+}
+
+.btn{
+    display:block;
+    margin-top:30px;
+    text-align:center;
+
+    text-decoration:none;
+    color:white;
+
+    padding:12px;
+
+    border:1px solid #007e43;
+    border-radius:8px;
+
+    transition:.3s;
+}
+
+.btn:hover{
+    background:#00ffff;
+    color:black;
+
+    box-shadow:0 0 20px #00ffff;
+}
+
+
+
+/* TOP BAR */
+
+#top-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1; /* davanti */
+}
+
+#top-bar ul {
+    display: flex; /* Attiva il layout flessibile */
+    list-style-type: none;  /* Rimuove i pallini della lista */
+    margin: 0;
+    justify-content: space-around; /*Posiziona gli elementi della lista equamente lungo la barra*/
+
+    background-color: #111;
+
+    padding: 0.5rem 0;
+}
+
+#top-bar a {
+    display: block; /* Rende cliccabile tutta l'area */
+    font-weight: bold;
+    font-size: 1.1rem;
+
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+#top-bar a:hover {
+    color: white;
+}

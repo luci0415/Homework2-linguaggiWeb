@@ -1,0 +1,197 @@
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: #000;
+    overflow: hidden;
+    position: relative;
+}
+
+/* distorsione dello spazio */
+body::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background: linear-gradient(
+        45deg,
+        rgba(0,255,120,0.05),
+        rgba(0,0,0,1),
+        rgba(255,0,0,0.05)
+    );
+
+    animation: warp 3s infinite steps(2, end);
+}
+
+/* “tagli” nella realtà */
+body::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background: repeating-linear-gradient(
+        90deg,
+        rgba(255,0,0,0.03) 0px,
+        rgba(0,255,120,0.03) 2px,
+        transparent 4px,
+        transparent 8px
+    );
+
+    animation: scanBreak 0.4s infinite linear;
+}
+
+/* spazio che si spezza */
+@keyframes warp {
+    0% {
+        transform: translate(0,0) scale(1);
+        filter: hue-rotate(0deg);
+    }
+    25% {
+        transform: translate(-2px,1px) scale(1.01);
+        filter: hue-rotate(15deg);
+    }
+    50% {
+        transform: translate(2px,-1px) scale(1);
+        filter: hue-rotate(-10deg);
+    }
+    75% {
+        transform: translate(-1px,-2px) scale(1.02);
+    }
+    100% {
+        transform: translate(0,0) scale(1);
+    }
+}
+
+/* “frame corrotti” */
+@keyframes scanBreak {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(6px); }
+}
+
+/* container centrale */
+.container {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+}
+
+
+
+/* SCRITTA GIGANTE */
+.title {
+    font-family: 'Creepster', cursive;
+    font-size: 9rem;
+    letter-spacing: 1.2rem;
+
+    color: rgba(180, 255, 210, 0.85);
+
+    text-shadow:
+        0 0 5px rgba(0,255,120,0.3),
+        0 0 15px rgba(0,255,120,0.2),
+        -2px 0 rgba(255,0,0,0.2),
+        2px 0 rgba(0,255,120,0.2);
+
+    animation: creepGlitch 3s infinite;
+}
+
+/* effetto entità instabile */
+@keyframes creepGlitch {
+    0% {
+        transform: translate(0,0) scale(1);
+        filter: blur(0px);
+        opacity: 1;
+    }
+
+    10% {
+        transform: translate(-3px,2px) scale(1.02);
+        filter: blur(0.5px);
+    }
+
+    20% {
+        transform: translate(3px,-1px) scale(1);
+    }
+
+    30% {
+        transform: translate(-2px,-2px);
+        text-shadow:
+            2px 0 rgba(255,0,0,0.4),
+            -2px 0 rgba(0,255,120,0.4);
+    }
+
+    40% {
+        transform: translate(0,1px);
+        opacity: 0.8;
+    }
+
+    60% {
+        transform: translate(2px,0) scale(1.03);
+        filter: blur(1px);
+    }
+
+    80% {
+        transform: translate(-1px,1px);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translate(0,0) scale(1);
+    }
+}
+
+
+
+/* bottone ENTER */
+.enter-btn {
+    display: inline-block;
+    margin-top: 2rem;
+
+    color: rgba(180, 255, 210, 0.8);
+
+    font-size: 2rem;
+    letter-spacing: 0.6rem;
+
+    text-decoration: none;
+    font-family: 'Creepster', cursive;
+
+    text-shadow:
+        0 0 5px rgba(0,255,120,0.3),
+        0 0 15px rgba(255,0,0,0.2);
+
+    animation: enterFlicker 2.5s infinite;
+}
+
+/* effetto “invito dall’entità” */
+@keyframes enterFlicker {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    25% {
+        opacity: 0.7;
+        transform: translateY(1px);
+    }
+
+    50% {
+        opacity: 1;
+        transform: translateY(-1px);
+    }
+
+    75% {
+        opacity: 0.6;
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.enter-btn:hover {
+    color: #ffffff;
+    text-shadow:
+        0 0 10px rgba(0,255,120,0.6),
+        0 0 20px rgba(255,0,0,0.4);
+}

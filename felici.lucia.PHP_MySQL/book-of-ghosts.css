@@ -1,0 +1,412 @@
+/* =========================
+   BASE
+========================= */
+
+/* Stile generale della pagina */
+body{
+    /*display: block;*/
+
+    /* Rimuove il margine predefinito */
+    margin: 0;
+
+    /* Sfondo con gradienti radiali per effetto horror */
+    background:
+            radial-gradient(circle at 30% 20%,
+            rgba(0, 80, 0, 0.3) 0%,
+            transparent 35%),
+
+            radial-gradient(circle at 70% 80%,
+            rgba(82, 31, 31, 0.6) 0%,
+            transparent 35%),
+
+            radial-gradient(circle at center,
+            #080808 0%,
+            #000000 85%);
+
+    /* Nasconde overflow orizzontale */
+    overflow-x: hidden;
+}
+
+button {
+    all: unset;
+    cursor: pointer;
+}
+
+
+/* =========================
+   TOP BAR
+========================= */
+
+#top-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background: #111;
+}
+
+/* contenitore flessibile piena larghezza */
+#top-bar ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly; /* 🔥 distribuzione uniforme */
+    list-style: none;
+    margin: 0;
+    padding: 0.8rem 1rem;
+    width: 100%;
+}
+
+/* ogni voce stessa “importanza” */
+#top-bar li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1; /* 🔥 tutte le voci hanno stessa larghezza */
+}
+
+/* link centrati e uniformi */
+#top-bar a {
+    display: block;
+    font-weight: bold;
+    font-size: 1.05rem;
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.9);
+    padding: 0.3rem 0.5rem;
+    text-align: center;
+}
+
+/* hover */
+#top-bar a:hover {
+    color: #ffffff;
+}
+
+/* icona utente */
+.user-icon {
+    flex: 0;              /* non si espande */
+    margin-left: auto;    /* va a destra */
+}
+
+.user-icon a {
+    font-size: 1.4rem;
+    color: white;
+    transition: 0.3s;
+}
+
+.user-icon a:hover {
+    color: #00ffff;
+    text-shadow: 0 0 10px #00ffff;
+}
+
+
+/* =========================
+   TITLE
+========================= */
+
+/* Contenitore del titolo */
+#page-title{
+
+    /* Centra il contenuto */
+    text-align: center;
+
+    /* Spazio dalla navbar */
+    margin-top: 6rem;
+}
+
+/* Titolo principale */
+h1{
+
+    /* Sposta leggermente verso il basso */
+    transform: translateY(30%);
+
+    /* Font gotico */
+    font-family: 'UnifrakturCook', cursive;
+
+    /* Grandezza testo */
+    font-size: 5rem;
+
+    /* Colore chiaro */
+    color: #e8ffe8da;
+
+    margin-bottom: 0.5rem;
+
+    /* Ombre luminose */
+    text-shadow:
+            -2px 0 black,
+            0 0 10px rgba(255, 0, 0, 0.8),
+            0 0 30px rgba(0,255,120,0.3),
+            0 0 60px rgba(0,255,120,0.15);
+
+    /* Animazione glow */
+    animation: pulseGlow 4s infinite alternate;
+}
+
+/* Sottotitolo */
+.subtitle{
+
+    /* Font gotico */
+    font-family: 'UnifrakturCook', cursive;
+
+    /* Grandezza testo */
+    font-size: 2.0rem;
+
+    /* Colore chiaro */
+    color: #e8ffe8da;
+
+    /* Effetti luminosi */
+    text-shadow:
+            0 0 10px rgba(255, 0, 0, 0.8),
+            0 0 10px rgba(0,255,100,0.3),
+            0 0 60px rgba(0,255,120,0.15);
+}
+
+
+
+/* =========================
+   MAIN AND SECTION
+========================= */
+
+/* Blocchi principali */
+main, .filter{
+    display: flex;
+    align-items: flex-start;
+
+    /* Margine laterale */
+    margin-left: 6rem;
+    margin-right: 6rem;
+
+    /* Spazio superiore */
+    margin-top: 2rem;
+
+    /* Unisce i bordi */
+    border-collapse: collapse;
+
+    /* Sfondo semi trasparente */
+    background:
+            rgba(0,0,0,0.18);
+
+    /* Ombra laterale */
+    box-shadow:
+            -10px 0 30px rgba(0,255,100,0.03);
+
+    /* Font macchina da scrivere */
+    font-family: 'Special Elite', monospace;
+
+    /* Colore testo */
+    color: #e6ffe6;
+
+    /* Ombre del testo */
+    text-shadow: 0 0 6px rgba(0, 0, 0, 0.9),
+    0 0 10px rgba(0, 255, 100, 0.2),
+    0 0 10px rgb(255, 7, 7);
+}
+
+/* Titolo tabella, parte a destra e section */
+h3{
+    /* Spaziatura interna */
+    padding: 1rem;
+
+    /* Dimensione testo */
+    font-size: 1.6rem;
+
+    /* Colore testo */
+    color: #e8ffe8da;
+
+    /* Sfondo trasparente */
+    background: transparent;
+
+    /*Margini*/
+    margin-top: 0;
+    margin-bottom: 1rem;
+
+    /* Testo centrato */
+    text-align: center;
+}
+
+
+
+/* =========================
+   TABLE
+========================= */
+
+table {
+    width: 49%;
+}
+
+/* Celle tabella */
+table td{
+
+    text-align: center;
+
+    /* Spaziatura interna */
+    padding: 1rem;
+
+    /* Colore testo */
+    color: #e8ffe8da;
+
+    /* Sfondo trasparente */
+    background: transparent;
+
+    /* Nessuna sottolineatura */
+    text-decoration: none;
+
+    /* Transizione hover */
+    transition: 0.2s ease;
+}
+
+/* Hover buttons tabella */
+table button:hover{
+
+    /* Colore rosso */
+    color: #ff4d4d;
+
+    /* Glow rosso */
+    text-shadow:
+            0 0 8px rgba(255,0,0,0.5);
+}
+
+
+/* =========================
+   PARTE A DESTRA DELLA TABELLA
+========================= */
+
+.description {
+
+    /* Testo centrato */
+    text-align: left;
+
+    width: 49%;
+
+    /* Sfondo trasparente */
+    background: transparent;
+}
+
+/* =========================
+   .FILTER
+========================= */
+
+.filter input{
+    margin-top: 2rem;
+}
+
+.filter button {
+    text-align: center;
+    margin-top: 1rem;
+    margin-left: 38%;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+/* Piè di pagina */
+footer{
+
+    /* Margine superiore */
+    margin-top: 4rem;
+
+    /* Padding interno */
+    padding: 1rem;
+
+    /* Testo centrato */
+    text-align: center;
+
+    /* Colore testo */
+    color: #d6ffd6;
+
+    /* Sfondo trasparente */
+    background:
+            rgba(0,0,0,0.15);
+
+    /* Bordo superiore */
+    border-top:
+            1px solid rgba(0,255,100,0.15);
+}
+
+
+/* =========================
+   ORBS
+========================= */
+
+/* Contenitore delle orb */
+.orb-container{
+
+    /* Posizione fissa */
+    position: fixed;
+
+    /* Occupa tutto lo schermo */
+    inset: 0;
+
+    /* Non interferisce col mouse */
+    pointer-events: none;
+
+    /* Dietro al contenuto */
+    z-index: -1;
+}
+
+/* Singola orb */
+.orb{
+
+    /* Posizione assoluta */
+    position: absolute;
+
+    /* Dimensioni */
+    width: 0.5em;
+    height: 0.5em;
+
+    /* Colore chiaro */
+    background:
+            rgba(230,255,230,0.9);
+
+    /* Forma circolare */
+    border-radius: 50%;
+
+    /* Glow */
+    box-shadow:
+            0 0 0.8em 0.3em rgba(200,255,200,0.3);
+
+    /* Leggera sfocatura */
+    filter: blur(0.05em);
+}
+
+/* Animazione movimento orb */
+@keyframes floatOrb{
+
+    /* Stato iniziale */
+    0%{
+        transform: translate(0,0);
+        opacity: 0;
+    }
+
+    /* Apparizione */
+    10%{
+        opacity: 0.6;
+    }
+
+    /* Movimento centrale */
+    50%{
+        transform: translate(10em,-5em);
+        opacity: 0.8;
+    }
+
+    /* Dissolvenza */
+    90%{
+        opacity: 0.6;
+    }
+
+    /* Stato finale */
+    100%{
+        transform: translate(20em,-2em);
+        opacity: 0;
+    }
+}
+
+/* Posizione e animazione delle orb */
+.orb1{ top:20%; left:10%; animation: floatOrb 8s linear infinite; }
+.orb2{ top:60%; left:80%; animation: floatOrb 12s linear infinite -2s; }
+.orb3{ top:40%; left:40%; animation: floatOrb 10s linear infinite -5s; }
+.orb4{ top:50%; left:70%; animation: floatOrb 14s linear infinite -3s; }
+.orb5{ top:15%; left:75%; animation: floatOrb 13s linear infinite -4s; }
+.orb6{ top:85%; left:20%; animation: floatOrb 15s linear infinite -6s; }
+.orb7{ top:55%; left:35%; animation: floatOrb 9s linear infinite -8s; }
+.orb8{ top:70%; left:15%; animation: floatOrb 10s linear infinite -5s; }
